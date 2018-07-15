@@ -1,0 +1,140 @@
+
+
+body {
+    font-family: Arial;
+    padding:0px;
+    margin:0;  
+    background:rgba(197, 181, 157, 0.836);
+    color:white;
+}
+
+// #user-profile {
+//     font-size:40px;
+//     display:inline-block;
+//     margin-top:20px;
+//     color:black;
+//     border-bottom:5px solid black;
+//     padding: 20px 40px 20px 0px;
+//     font-weight:bold;
+// }
+
+// .subtitle {
+//     padding-top:10px;
+//     font-size:20px;
+// }
+
+.flex-title {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    > span {
+      white-space: nowrap;
+    }
+    .title-main {
+      flex-grow: 1;
+    }
+  }
+
+.title {
+    border-bottom: 1px solid white;
+    width:60%;
+    margin: 40px auto;
+    font-size:40px;
+    font-weight:bold;
+}
+.title-note {
+    font-size: 60%;
+}
+
+#user-profile img {
+    width:100px;
+    height:100px;
+    display:inline-block;
+}
+
+#top-container {
+    flex-basis: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 100%;
+    margin-top:20px;
+}
+
+#collage-container {
+    width: 520px;
+    height: 520px;
+    flex-basis: 1;
+}
+
+
+#collage-title {
+    font-size:20px;
+    display: inline-block;
+}
+
+.artwork {
+    width: 130px;
+    height: 130px;
+    float: left; //removes spacing around images
+}
+
+#overlay {
+    opacity:0;
+    width:520px;
+    height:500px;
+    color:white;
+    font-size:14px;
+    background:black;
+    position:absolute;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 20px;
+    transition: .3s ease-out;
+}
+
+#overlay:hover {
+    opacity:0.8;
+    transition: .3s ease-out;
+}
+
+#time-range-select {
+    display: inline-block;
+    background:none;
+}
+
+#time-range-select select {
+    font-size:20px;
+    border:none;
+    background:none;
+    color: white;
+    border-bottom:1px solid white;
+}
+
+select, option {
+    outline: 0; // removes selection when clicking on dropdown
+    background: rgba(197, 181, 157, 0.836);
+}
+
+
+@media (max-width: 1100px) {
+    #collage-container {
+        width:500px;
+    }
+
+    .artwork {
+        width:120px;
+        height:120px;
+    }
+
+    #overlay {
+        width: 480px;
+        height: 470px;
+        padding-top:10px;
+    }
+}
+
+
+
+

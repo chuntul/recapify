@@ -1,0 +1,63 @@
+<%= link_to "Refresh", "/auth/spotify" %>
+
+<div class="title flex-title">
+    <span class="title-main">Hello,
+        <% if (!@spotify_user.display_name.present?)%>
+            <%= @spotify_user.id %>!
+        <% else %>
+            <%= @spotify_user.display_name %>!
+        <% end %> 
+    </span>
+    <span class="title-note">Here's a recap of your Spotify listening history.</span>
+    <script>
+        haha( <%= @spotify_user.to_hash.to_json.html_safe %>)
+    </script>
+</div>
+
+<div id="top-container">
+    <div id="collage-container">
+        <div id="collage-title"> Here are your top artists </div>
+        <div id="time-range-select" class="artists"></div>
+        <script type="text/javascript">
+            makeDropDown(<%= raw @api_ranges %>, <%= raw @artists_data %>, "artists")
+        </script>
+        <p>
+        <div id="collage-artists">
+            <div class="collage-artists-art">
+                <% @top_artists_short.each do |a| %> 
+                    <img class="artwork" src=<%= a.images[0]["url"] %>>
+                <% end %>
+            </div>
+            
+        </div>
+        <div id="overlay" class="overlay-artists"> 
+            <% @top_artists_short.each do |a| %> 
+                <%= a.name %><p>
+            <% end %>  
+        </div> 
+         
+    </div>
+
+    <div id="collage-container">
+        <div id="collage-title"> And your top tracks</div>
+        <div id="time-range-select" class="tracks"></div>
+        <script type="text/javascript">
+            makeDropDown(<%= raw @api_ranges %>, <%= raw @tracks_data %>, "tracks")
+        </script>
+        <p>
+
+        <div id="collage-tracks">
+            <div class="collage-tracks-art">
+                <% @top_tracks_short.each do |t| %> 
+                    <img class="artwork" src=<%= t.album.images[0]["url"] %>>
+                <% end %>
+            </div>
+        </div>
+        <div id="overlay" class="overlay-tracks"> 
+            <% @top_tracks_short.each do |t| %> 
+                <%= t.name %> - <%= t.artists[0].name %><p>
+            <% end %>  
+        </div> 
+        
+    </div>
+</div>
