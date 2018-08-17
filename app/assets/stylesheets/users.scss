@@ -1,7 +1,7 @@
 
 
 body {
-    font-family: Arial;
+    font-family: Helvetica;
     padding:0px;
     margin:0;  
     background:rgba(197, 181, 157, 0.836);
@@ -27,23 +27,28 @@ body {
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
-    > span {
+    
+    span {
       white-space: nowrap;
     }
     .title-main {
       flex-grow: 1;
     }
-  }
+}
 
 .title {
     border-bottom: 1px solid white;
-    width:60%;
+    width:78%;
     margin: 40px auto;
     font-size:40px;
     font-weight:bold;
+    padding-bottom:30px;
+    text-transform:lowercase;
 }
 .title-note {
-    font-size: 60%;
+    font-size: 50%;
+    font-weight:normal;
+    text-transform:lowercase;
 }
 
 #user-profile img {
@@ -82,20 +87,23 @@ body {
 
 #overlay {
     opacity:0;
-    width:520px;
+    width:500px;
     height:500px;
     color:white;
-    font-size:14px;
-    background:black;
+    font-size:18px;
+    background:rgba(0, 0, 0, 0.836);
     position:absolute;
-    text-align: center;
-    vertical-align: middle;
-    padding-top: 20px;
+    text-align: right;
+    // vertical-align: middle;
+    padding: 20px 20px 0px 0px;
     transition: .3s ease-out;
+    text-transform:lowercase;
+    line-height:12px;
+    font-family:'Times New Roman', Times, serif;
 }
 
 #overlay:hover {
-    opacity:0.8;
+    opacity:0.9;
     transition: .3s ease-out;
 }
 
@@ -129,7 +137,7 @@ select, option {
     }
 
     #overlay {
-        width: 480px;
+        width: 460px;
         height: 470px;
         padding-top:10px;
     }
