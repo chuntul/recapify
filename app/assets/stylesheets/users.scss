@@ -91,7 +91,7 @@ body {
     height:500px;
     color:white;
     font-size:18px;
-    background:rgba(0, 0, 0, 0.836);
+    background:rgba(0, 0, 0, 0.6);
     position:absolute;
     text-align: right;
     // vertical-align: middle;
@@ -103,7 +103,7 @@ body {
 }
 
 #overlay:hover {
-    opacity:0.9;
+    opacity:1;
     transition: .3s ease-out;
 }
 
